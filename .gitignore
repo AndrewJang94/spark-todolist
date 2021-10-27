@@ -1,0 +1,13 @@
+# node modules
+/node_modules
+
+# VS Code files
+/.vscode
+
+# Parcel File 
+/dist
+/.parcel-cache
+
+# OS Files
+
+.DS_Store

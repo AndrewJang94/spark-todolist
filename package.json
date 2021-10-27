@@ -1,0 +1,36 @@
+{
+  "name": "todolistapp",
+  "version": "1.0.0",
+  "description": "simple vanilla jas poject",
+  "default": "src/index.html",
+  "scripts": {
+    "test": "none",
+    "start": "npx parcel src/index.html",
+    "build": "npx parcel build src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndrewJang94/TodolistA01.git"
+  },
+  "keywords": [
+    "to",
+    "do",
+    "list"
+  ],
+  "author": "Yun Jang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndrewJang94/TodolistA01/issues"
+  },
+  "homepage": "https://github.com/AndrewJang94/TodolistA01#readme",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.0",
+    "http-server": "^14.0.0",
+    "parcel": "^2.0.0",
+    "sass": "^1.43.4"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "uuid": "^8.3.2"
+  }
+}
