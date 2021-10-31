@@ -1,0 +1,26 @@
+.category{
+    font-weight: bold;
+    background-color: #00A19D;
+}
+
+.todoitem:nth-child(2) .category {
+    background-color: #FFF8E5;
+}
+
+.todoitem:nth-child(3) .category {
+    background-color:#FFB344;
+}
+
+.todoitem:nth-child(4) .category {
+    background-color:#E05D5D;
+}
+
+.todoitem:nth-child(5) .category {
+    background-color: rgb(122, 179, 100);
+}
+
+.todoitem {
+    display: flex;
+    flex-direction: column;
+    border: solid 3px gray;
+}

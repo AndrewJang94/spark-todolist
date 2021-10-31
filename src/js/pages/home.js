@@ -5,14 +5,15 @@ import tagline from '../components/tag/tagline'
 import link from '../components/button/links'
 
 
-const home = function(params) {
+const home = function() {
 
     const pageHeader =document.createElement('header')
+    const homeLink = link("GET STARTED", "/todo")
     pageHeader.classList.add('page-header')
     pageHeader.appendChild(makeElement(logo()))
-    pageHeader.appendChild(makeElement(header('Project Manager')))
+    pageHeader.appendChild(makeElement(header('PROJECT MANAGER')))
     pageHeader.appendChild(makeElement(tagline('manage your projects in electrfying way')))
-    pageHeader.appendChild(makeElement(link('GET STARTED', '/todo')))
+    pageHeader.append(homeLink)
 
     return pageHeader
 }

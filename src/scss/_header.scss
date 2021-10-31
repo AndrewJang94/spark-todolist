@@ -3,7 +3,6 @@
     padding: 4 rem 0;
     text-align: center;
     font-size: 3rem;
-   
 }
 
 .ui-header{
@@ -15,5 +14,12 @@
 .ui-small-header{
     @extend %ui-base;
     font-size: 1rem;
+    font-weight: bold;
+}
+
+.ui-small-notfound {
+    @extend %ui-base;
+    font-size: 6rem;
+    font-weight: bold;
 }
 
