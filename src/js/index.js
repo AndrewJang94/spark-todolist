@@ -9,8 +9,7 @@ const app = document.querySelector('#app')
 const onAppInit = async function(e){
     let todo = await dataFetcher('./data/todo.json')
 
-    // DEMO IF THE DATA DOESN'T HAVE SOME UNIQUE KEY
-    // example for this data as there is no unique id
+   
     if(todo[0].id === undefined){
         todo = [...keyGenerator(todo)]
     }

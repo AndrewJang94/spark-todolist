@@ -5,6 +5,7 @@ import todoitem from "../components/cards/todoitem"
 import logo from '../icons/logo'
 import header from '../components/heading/header'
 import tagline from '../components/tag/tagline'
+import addIcon from "../icons/Add"
 
 
 
@@ -27,6 +28,10 @@ const todoListDirectory = function(){
       // looping emp li adding the
       elements.forEach(element=> ul.append(element))
       page.append(container)
+      const footer = document.createElement('footer')
+      footer.classList.add('footer')
+      footer.append(makeElement(addIcon()))
+      page.append(footer)
       pageHeader.append(page)
     }
     
