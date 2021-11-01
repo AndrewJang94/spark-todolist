@@ -19,7 +19,7 @@ const isValidRoute = Object.keys(routes).find(key => key===pathname)
         pathname,
         window.location.origin + pathname
     )
-        // app.appendChild(routes[window.location.pathname]())
+        
         if(isValidRoute === undefined)
         {
             app.appendChild(notFound())

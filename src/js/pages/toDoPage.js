@@ -19,13 +19,10 @@ const todoListDirectory = function(){
     pageHeader.appendChild(makeElement(tagline('manage your projects in electrfying way')))
     const page = document.createElement('div')
     const container = todolist() 
-    // assume data is not null
     if(todoList !== null){
-        // getting refer to the ul
       const ul = container.querySelector('ul')
-      // creating the emply cards from data
       const elements = todoList.map(emp => todoitem(emp))
-      // looping emp li adding the
+    
       elements.forEach(element=> ul.append(element))
       page.append(container)
       const footer = document.createElement('footer')

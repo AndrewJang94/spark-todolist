@@ -6,25 +6,6 @@ import makeElement from '../utils/makeElement'
 import tagline from '../components/tag/tagline'
 import body from '../components/body/content'
 
-
-/*const notFound = function(){
-    const page = document.createElement('div')  
-    let headerTemplate = `
-        <header class="page-not-found center-in-page">
-        <h1><span>404</span> <span>page not found</span></h1>
-        </header>
-    `
-    const pageHeader = makeElement(headerTemplate)
-    const homeLink = link("HOME", "/todo", "ui-link-notfound")
-
-    pageHeader.append(homeLink)
-    page.append(pageHeader)
-
-    return page
-}
-
-export default notFound */
-
 const notFound = function() {
 
     const pageHeader =document.createElement('header')
