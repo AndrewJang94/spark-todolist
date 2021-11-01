@@ -5,7 +5,7 @@ import todoitem from "../components/cards/todoitem"
 import logo from '../icons/logo'
 import header from '../components/heading/header'
 import tagline from '../components/tag/tagline'
-import addIcon from "../icons/Add"
+import addIcon from "../icons/add"
 
 
 
