@@ -3,30 +3,42 @@ import button from "../components/button/"
 import { Router } from "../routes/router"
 import { getStore } from "../redux/store"
 import reducer from "../redux/reducer"
+import todoitem from "../components/cards/todoitem"
 
 const cancelButton = button("cancel")
 const deleteButton = button("delete")
+
 
 const deletePage = function(props){
 
     const page = document.createElement('div') 
     // CANCEL DELETE EVENT HANDLER
     function onCancelDelete (e){
+        
     Router('/todo')
     }
 
-    function onDeleteTodo (e){
+    console.log(props)
 
-        const index = getStore().findIndex((employee)=>{
-            return (employee.id === props.id)
-            })
+
+    
+
+
+
+    function onDeleteTodo (e){
+        
+        if(props !== null){
+            Router('/todo')
+        const removeEmployee = props
+        const index = getStore().findIndex(todoitem => todoitem.id === removeEmployee.id)
+        //const index = getStore().findIndex(todoitem=>todoitem.id === props.id)
             const action = {
             type:"delete",
             payload:{index},
             cb:()=> Router('/todo')
-            }
-            
+            } 
             reducer(action)
+        }
 
     }
     

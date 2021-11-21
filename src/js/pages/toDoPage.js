@@ -8,10 +8,8 @@ import tagline from '../components/tag/tagline'
 import addIcon from "../icons/add"
 import { Router } from "../routes/router"
 
-function onDeleteTodo(e){
-  const todoId = {id:e.currentTarget.dataset.key}
-  Router('/delete', todoId)
-}
+
+
 
 
 const todoListDirectory = function(){
@@ -27,7 +25,6 @@ const todoListDirectory = function(){
     if(todoList !== null){
       const ul = container.querySelector('ul')
       const elements = todoList.map(emp => todoitem(emp))
-    
       elements.forEach(element=>{ element.querySelector('#delete').addEventListener('click', onDeleteTodo) 
       ul.append(element)})
       page.append(container)
@@ -37,6 +34,12 @@ const todoListDirectory = function(){
       page.append(footer)
       pageHeader.append(page)
     }
+
+    function onDeleteTodo(e){
+      const todoId = {id:e.currentTarget.dataset.key}
+      Router('/delete', todoId)
+    }
+    
     
     return pageHeader
 }
