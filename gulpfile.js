@@ -1,13 +1,13 @@
-const {src, dest} = require('gulp')
+const {src, dest, series} = require('gulp')
 
 const static = function(cb){
     
-   return src('src/static/data/*.*')
-    .pipe(dest('dist/data'))
-
-    
-    cb()
+   return src('src/static/**')
+    .pipe(dest('dist/static'))
 
 }
 
-exports.default = static
+function redirect(){
+    return(src('./_redirects').pipe(dest('./dist')))
+}
+exports.default = series(static, redirect)

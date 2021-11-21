@@ -8,7 +8,7 @@ const routes = {
    
 }
 
-const Router =  function (pathname)  {
+const Router =  function (pathname, params=null)  {
 
 const isValidRoute = Object.keys(routes).find(key => key===pathname)
 
@@ -25,7 +25,7 @@ const isValidRoute = Object.keys(routes).find(key => key===pathname)
             app.appendChild(notFound())
         }else
         {
-            app.appendChild(routes[isValidRoute]()) 
+            app.appendChild(routes[isValidRoute](params)) 
         }
 }
 
