@@ -10,7 +10,7 @@ const index = action.payload.index;
 const newStore = [...store.slice(0,index), ...store.slice(index+1)]
 updateStore(newStore)
 action.cb()
-return "remove employee";
+return "remove todo";
 case "edit": 
 return "edit employee";
 case "add": 
