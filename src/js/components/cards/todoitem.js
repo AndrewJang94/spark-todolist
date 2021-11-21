@@ -16,7 +16,7 @@ const todoitem = function ({id,title,category,isCompleted}) {
      <p class="category">${category}</p>
      <p class="title">${title}</p>
      <p class="isCompleted">${isCompleted}</p>
-     <p class="controls"><button>${editIcon()}</button><button>${deleteIcon()}</button></p>      
+     <p class="controls" data-key="${id}"><button id=edit data-key="${id}">${editIcon()}</button><button id="delete" data-key="${id}">${deleteIcon()}</button></p>      
   </li>        
   `;
   return makeElement(template)

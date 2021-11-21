@@ -6,8 +6,12 @@ import logo from '../icons/logo'
 import header from '../components/heading/header'
 import tagline from '../components/tag/tagline'
 import addIcon from "../icons/add"
+import { Router } from "../routes/router"
 
-
+function onDeleteTodo(e){
+  const todoId = {id:e.currentTarget.dataset.key}
+  Router('/delete', todoId)
+}
 
 
 const todoListDirectory = function(){
@@ -19,11 +23,13 @@ const todoListDirectory = function(){
     pageHeader.appendChild(makeElement(tagline('manage your projects in electrfying way')))
     const page = document.createElement('div')
     const container = todolist() 
+
     if(todoList !== null){
       const ul = container.querySelector('ul')
       const elements = todoList.map(emp => todoitem(emp))
     
-      elements.forEach(element=> ul.append(element))
+      elements.forEach(element=>{ element.querySelector('#delete').addEventListener('click', onDeleteTodo) 
+      ul.append(element)})
       page.append(container)
       const footer = document.createElement('footer')
       footer.classList.add('footer')

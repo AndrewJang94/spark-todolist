@@ -1,5 +1,5 @@
 import makeElement from "../utils/makeElement"
-import link from "../components/button/links"
+import link from "../components/link/links"
 import logo from '../icons/logo'
 import header from '../components/heading/header'
 import makeElement from '../utils/makeElement'

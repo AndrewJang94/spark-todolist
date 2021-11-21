@@ -10,4 +10,5 @@ const static = function(cb){
 function redirect(){
     return(src('./_redirects').pipe(dest('./dist')))
 }
+
 exports.default = series(static, redirect)
