@@ -21,10 +21,6 @@ const deletePage = function(props){
     console.log(props)
 
 
-    
-
-
-
     function onDeleteTodo (e){
         
         if(props !== null){
