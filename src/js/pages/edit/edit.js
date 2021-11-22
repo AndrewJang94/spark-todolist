@@ -77,13 +77,18 @@ let body =`<body>
     
 </form>
 </body>`
+const pageHeader =document.createElement('header')
+pageHeader.classList.add('page-header-todo')
+pageHeader.appendChild(makeElement(header('SPARKS','ui-small-header')))
+pageHeader.appendChild(makeElement(tagline('Take charge of your Todos')))
 const pageBody = makeElement(body)
 cancelButton.addEventListener('click', onCancelEdit)  
 editButton.addEventListener('click', onEditTodo) 
 pageBody.querySelector('div').append(cancelButton, editButton)
 page.append(pageBody)
+pageHeader.append(page)
 
-return page
+return pageHeader
 
 }
 export default editPage

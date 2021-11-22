@@ -2,6 +2,8 @@ import makeElement from "../../utils/makeElement"
 import button from "../../components/button"
 import { Router } from "../../routes/router"
 import reducer from "../../redux/reducer"
+import header from '../../components/heading/header'
+import tagline from '../../components/tag/tagline'
 
 const cancelButton = button("cancel")
 const addButton = button("add")
@@ -53,19 +55,19 @@ let body =`<body>
     </label>
     <br>
     <label>Start Date
-        <input id="startDate">
+        <input id="startDate" type="date">
     </label>
     <br>
     <label>Start Time
-        <input id="startTime">
+        <input id="startTime" type="time">
     </label>
     <br>
     <label>End Date Time
-        <input id="endDate">
+        <input id="endDate" type="date">
     </label>
     <br>
     <label>End Time
-        <input id ="endTime">
+        <input id ="endTime" type="time">
     </label>
     <br>
     <div><div>
@@ -73,13 +75,18 @@ let body =`<body>
     
 </form>
 </body>`
+const pageHeader =document.createElement('header')
+pageHeader.classList.add('page-header-todo')
+pageHeader.appendChild(makeElement(header('SPARKS','ui-small-header')))
+pageHeader.appendChild(makeElement(tagline('Take charge of your Todos')))
 const pageBody = makeElement(body)
 cancelButton.addEventListener('click', onCancelAdd)  
 addButton.addEventListener('click', onAddTodo) 
 pageBody.querySelector('div').append(cancelButton, addButton)
 page.append(pageBody)
+pageHeader.append(page)
 
-return page
+return pageHeader
 
 }
 export default addPage
