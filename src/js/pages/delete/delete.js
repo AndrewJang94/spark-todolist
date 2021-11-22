@@ -3,12 +3,19 @@ import button from "../../components/button"
 import { Router } from "../../routes/router"
 import { getStore } from "../../redux/store"
 import reducer from "../../redux/reducer"
+import logo from '../../icons/logo'
+import header from '../../components/heading/header'
+import tagline from '../../components/tag/tagline'
 
 const cancelButton = button("cancel")
 const deleteButton = button("delete")
 
 
 const deletePage = function(props){
+       const pageHeader =document.createElement('header')
+    pageHeader.classList.add('page-header-todo')
+    pageHeader.appendChild(makeElement(header('SPARKS','ui-small-header')))
+    pageHeader.appendChild(makeElement(tagline('Take charge of your Todos')))
 
     const page = document.createElement('div') 
     // CANCEL DELETE EVENT HANDLER
@@ -44,25 +51,28 @@ const deletePage = function(props){
 
     }
     
-    let headerTemplate = `
+    let template = `
 <header class="welcome center-in-page">
-<h1>Delete Employee</h1>
-<p>Remove Employee</p> 
 <div><li class="todoitem" data-key="${props.id}">
 <p class="category">${props.category}</p>
-<p class="title">${props.title}</p>
-<p class="isCompleted">${props.isCompleted}</p>
+<p class="title">Todo: ${props.title}</p>
+<p class="isCompleted">Completed?: ${props.isCompleted}</p>
+<p class="startDate">Start Date :${props.startDate}</p>
+<p class="startTime">Start Time: ${props.startTime}</p>
+<p class="endDate">End Date:${props.endDate}</p>
+<p class="endTime">End Time${props.endTime}</p>
 </li>        
 </div>
 </header>
 `
-const pageHeader = makeElement(headerTemplate) 
+const body = makeElement(template) 
 cancelButton.addEventListener('click', onCancelDelete) 
 deleteButton.addEventListener('click', onDeleteTodo) 
-pageHeader.querySelector('div').append(cancelButton, deleteButton)
-page.append(pageHeader)
+body.querySelector('div').append(cancelButton, deleteButton)
+page.append(body)
+pageHeader.append(page)
 
-return page
+return pageHeader
 }
 
     export default deletePage

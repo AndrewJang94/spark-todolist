@@ -2,7 +2,6 @@ import makeElement from "../../utils/makeElement"
 import todolist from "../../components/cards/todolist"
 import { getStore } from "../../redux/store"
 import todoitem from "../../components/cards/todoitem"
-import logo from '../../icons/logo'
 import header from '../../components/heading/header'
 import tagline from '../../components/tag/tagline'
 import addIcon from "../../icons/add"
@@ -14,9 +13,8 @@ const todoListDirectory = function(){
     const todoList = getStore()
     const pageHeader =document.createElement('header')
     pageHeader.classList.add('page-header-todo')
-    pageHeader.appendChild(makeElement(logo()))
-    pageHeader.appendChild(makeElement(header('PROJECT MANAGER','ui-small-header')))
-    pageHeader.appendChild(makeElement(tagline('manage your projects in electrfying way')))
+    pageHeader.appendChild(makeElement(header('SPARKS','ui-small-header')))
+    pageHeader.appendChild(makeElement(tagline('Take charge of your Todos')))
     const page = document.createElement('div')
     const container = todolist() 
 

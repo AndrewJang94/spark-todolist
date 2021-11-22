@@ -3,6 +3,8 @@ import button from "../../components/button"
 import { Router } from "../../routes/router"
 import { getStore } from "../../redux/store"
 import reducer from "../../redux/reducer"
+import header from '../../components/heading/header'
+import tagline from '../../components/tag/tagline'
 
 const cancelButton = button("cancel")
 const editButton = button("edit")
@@ -37,40 +39,41 @@ console.log(props)
 
 let body =`<body>
 <form>
-    <label>ID
+
+    <label for="id">ID:
         <input id="id" value="${props.id}" disabled>
     </label>
+  
     <br>
-    <label>Category
+    <label for="category">Category:
         <input id="category" value="${props.category}">
-    </label>
+    </label for="id">
     <br>
-    <label>Completed
+    <label for="isCompleted">Completed:
         <input id="isCompleted" type="checkbox" value="${props.isCompleted}">
     </label>
     <br>
-    <label>Todo
+    <label for="title">Todo:
         <input id="title" value="${props.title}">
     </label>
     <br>
-    <label>Start Date
+    <label for="startDate">Start Date:
         <input id="startDate" value="${props.startDate}">
     </label>
     <br>
-    <label>Start Time
+    <label for="startTime">Start Time:
         <input id="startTime" value="${props.startTime}">
     </label>
     <br>
-    <label>End Date Time
+    <label for="endDate">End Date Time:
         <input id="endDate" value="${props.endDate}">
     </label>
     <br>
-    <label>End Time
+    <label>End Time:
         <input id ="endTime" value="${props.endTime}">
     </label>
     <br>
     <div><div>
-
     
 </form>
 </body>`

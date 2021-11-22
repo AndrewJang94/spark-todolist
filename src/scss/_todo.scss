@@ -1,6 +1,7 @@
 .category{
     font-weight: bold;
     background-color: #00A19D;
+    gap:3rem;
 }
 
 .todoitem:nth-child(2) .category {
@@ -30,8 +31,19 @@
 }
 .footer {
     background-color: #FFB344;
+    position: absolute;
+    top:690px;
+    border-radius: 10px;
 }
 .footer svg {
-    height: 80px;
+    height: 60px;
     color: #FFF8E5;
+}
+
+.endDate {
+    color: Silver;
+}
+
+.title {
+    font-size:1rem;
 }

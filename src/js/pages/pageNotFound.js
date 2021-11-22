@@ -13,7 +13,7 @@ const notFound = function() {
     pageHeader.classList.add('page-header-notfound')
     pageHeader.appendChild(makeElement(logo()))
     pageHeader.appendChild(makeElement(header('PROJECT MANAGER','ui-small-header')))
-    pageHeader.appendChild(makeElement(tagline('manage your projects in electrfying way')))
+    pageHeader.appendChild(makeElement(tagline('Take charge of your Todos')))
     const pageBody = document.createElement('div')
     pageBody.classList.add('woops')
     pageBody.appendChild(makeElement(body('OOPS','ui-small-notfound')))
