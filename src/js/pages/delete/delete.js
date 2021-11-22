@@ -1,9 +1,8 @@
-import makeElement from "../utils/makeElement"
-import button from "../components/button/"
-import { Router } from "../routes/router"
-import { getStore } from "../redux/store"
-import reducer from "../redux/reducer"
-import todoitem from "../components/cards/todoitem"
+import makeElement from "../../utils/makeElement"
+import button from "../../components/button"
+import { Router } from "../../routes/router"
+import { getStore } from "../../redux/store"
+import reducer from "../../redux/reducer"
 
 const cancelButton = button("cancel")
 const deleteButton = button("delete")
@@ -15,7 +14,13 @@ const deletePage = function(props){
     // CANCEL DELETE EVENT HANDLER
     function onCancelDelete (e){
         
+    cleanUp()
     Router('/todo')
+    }
+
+    function cleanUp (){
+        cancelButton.removeEventListener('click', onCancelDelete)  
+        deleteButton.removeEventListener('click', onDeleteTodo) 
     }
 
     console.log(props)
@@ -25,8 +30,8 @@ const deletePage = function(props){
         
         if(props !== null){
             Router('/todo')
-        const removeEmployee = props
-        const index = getStore().findIndex(todoitem => todoitem.id === removeEmployee.id)
+        const removeTodo = props
+        const index = getStore().findIndex(todoitem => todoitem.id === removeTodo.id)
         //const index = getStore().findIndex(todoitem=>todoitem.id === props.id)
             const action = {
             type:"delete",
@@ -34,6 +39,7 @@ const deletePage = function(props){
             cb:()=> Router('/todo')
             } 
             reducer(action)
+            cleanUp()
         }
 
     }
@@ -42,7 +48,12 @@ const deletePage = function(props){
 <header class="welcome center-in-page">
 <h1>Delete Employee</h1>
 <p>Remove Employee</p> 
-<div></div>
+<div><li class="todoitem" data-key="${props.id}">
+<p class="category">${props.category}</p>
+<p class="title">${props.title}</p>
+<p class="isCompleted">${props.isCompleted}</p>
+</li>        
+</div>
 </header>
 `
 const pageHeader = makeElement(headerTemplate) 

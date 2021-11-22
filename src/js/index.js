@@ -7,7 +7,7 @@ import keyGenerator from './utils/key'
 const app = document.querySelector('#app')
 
 const onAppInit = async function(e){
-    let todo = await dataFetcher('./data/todo.json')
+    let todo = await dataFetcher('./static/data/todo.json')
 
    
     if(todo[0].id === undefined){
